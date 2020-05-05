@@ -3,9 +3,7 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ $BRANCH = "master" ]]; then
-  echo "prod"
-  echo "dev"
+  echo "prod dev"
 elif [[ $BRANCH = staging.* ]]; then
-  echo "staging"
-  echo "staging2"
+  echo "staging staging2"
 fi
