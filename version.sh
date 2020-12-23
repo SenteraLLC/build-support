@@ -5,7 +5,7 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 SHA=$(git rev-parse --short HEAD)
 DATE=$(date --rfc-3339=date)
 
-if [[ $BRANCH = "master" ]]; then
+if [[ $BRANCH = "master" ]] || [[ $BRANCH = "main" ]]; then
   if [[ -e ".version" ]]; then
     echo "v$(cat ${BASEDIR}/.version)"
   else
