@@ -16,3 +16,5 @@ for env_tag in $env_tags; do
   docker tag $VERSION_TAG $full_tag
   docker push $full_tag
 done
+git tag $VERSION_TAG
+git push --tags
