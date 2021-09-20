@@ -65,5 +65,5 @@ tracked version for `master`.
 ### Example usage
 This is a handy one-liner that can be used in a build script:
 ``` shell
-wget -O - https://github.com/SenteraLLC/version.sh/raw/master/version.sh | bash
+wget -O - https://github.com/SenteraLLC/build-support/raw/master/version.sh | bash
 ```
