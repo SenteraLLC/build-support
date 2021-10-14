@@ -1,9 +1,13 @@
 This repository contains shell scripts that assist in the process of building Sentera's various services that run on AWS.
 
 ## env-tags.sh
-This shell script is used when building a Docker image to determine the environments for which the image should be tagged, based upon the branch (`main/master` or `staging*`) being built.
+This shell script is used when building a Docker image to determine the environments for which the image should be tagged, based upon the branch being built.
 
-For example, when building on the `main` or `master` branch, the image should be tagged for the `prod` and `dev` environments.
+The branch name -> environment name mapping is:
+- `dev.*` branch -> `dev` environment
+- `staging.*` branch -> `staging` environment
+- `staging2.*` branch -> `staging2` environment
+- `main`, `master` branches -> `prod` environment
 
 ### Example usage
 This is a handy one-liner that can be used in a build script:
@@ -14,7 +18,7 @@ env_tags=$(wget -O - https://github.com/SenteraLLC/build-support/raw/master/env-
 ## push-to-ecr.sh
 This shell script pushes a built Docker image and tags that reference this image to AWS ECR.
 
-For example, when building on the `main` or `master` branch, the resulting tags pushed to ECR would look like the following: `2021-09-09.2a638c4`, `dev`, `prod`.
+For example, when building on the `main` or `master` branch, the resulting tags pushed to ECR would look like the following: `2021-09-09.2a638c4`, `prod`.
 
 ### Example usage
 This is a handy one-liner that can be used in a build script:
