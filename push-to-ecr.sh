@@ -9,7 +9,7 @@ ECR_IMAGE="${ECR_IMAGE_PREFIX}:${VERSION_TAG}"
 echo "Pushing ${ECR_IMAGE}"
 docker tag $VERSION_TAG $ECR_IMAGE
 docker push $ECR_IMAGE
-env_tags=$(wget -O - https://github.com/SenteraLLC/build-support/raw/master/env-tags.sh | bash)
+env_tags=$(wget -O - https://github.com/SenteraLLC/build-support/raw/one-to-one-branch-to-environment/env-tags.sh | bash)
 for env_tag in $env_tags; do
   full_tag="${ECR_IMAGE_PREFIX}:${env_tag}"
   echo "Pushing ${full_tag}"
