@@ -1,0 +1,9 @@
+{
+  "name": "build-support",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
