@@ -4,10 +4,10 @@ This repository contains shell scripts that assist in the process of building Se
 This shell script is used when building a Docker image to determine the environments for which the image should be tagged, based upon the branch being built.
 
 The branch name -> environment name mapping is:
-- `dev.*` branch -> `dev` environment
-- `staging.*` branch -> `staging` environment
-- `staging2.*` branch -> `staging2` environment
-- `main`, `master` branches -> `prod` environment
+- `dev` or `dev.*` branch -> `dev` environment
+- `staging` or `staging.*` branch -> `staging` environment
+- `staging2` or `staging2.*` branch -> `staging2` environment
+- `main` or `master` branch -> `prod` environment
 
 ### Example usage
 This is a handy one-liner that can be used in a build script:
