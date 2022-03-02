@@ -18,7 +18,7 @@ export -f git`
     const actual = spawnSync(
       `source ${bashrcPath} && ./env-tags.sh`,
       [],
-      { shell: true }
+      { shell: 'bash' }
     ).stdout.toString('utf8')
     expect(actual.trim()).toBe(expected)
   })
